@@ -42,4 +42,5 @@ class Meal {
     required this.isVegan,
     required this.isVegetarian,
   });
+
 }
