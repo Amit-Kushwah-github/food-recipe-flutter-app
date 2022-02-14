@@ -65,9 +65,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 SnackBar(
                   content: const Text('Filters Applied'),
                   action: SnackBarAction(
-                      label: 'OK',
-                      onPressed:
-                          ScaffoldMessenger.of(context).hideCurrentSnackBar),
+                    label: 'OK',
+                    onPressed:
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar,
+                  ),
                 ),
               );
             },
@@ -83,37 +84,39 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 style: Theme.of(context).textTheme.subtitle1),
           ),
           Expanded(
-              child: ListView(
-            children: [
-              _buildSwitchListTile('Gluten Free',
-                  'Only include gluten-free meals.', _glutenFree!, (newValue) {
-                setState(() {
-                  _glutenFree = newValue;
-                });
-              }),
-              _buildSwitchListTile(
-                  'Vegetarian', 'Only include vegetarian meals.', _vegetarian!,
-                  (newValue) {
-                setState(() {
-                  _vegetarian = newValue;
-                });
-              }),
-              _buildSwitchListTile(
-                  'Vegan', 'Only include vegan meals.', _vegan!, (newValue) {
-                setState(() {
-                  _vegan = newValue;
-                });
-              }),
-              _buildSwitchListTile(
-                  'Lactose-free',
-                  'Only include lactose-free meals.',
-                  _lactoseFree!, (newValue) {
-                setState(() {
-                  _lactoseFree = newValue;
-                });
-              }),
-            ],
-          ))
+            child: ListView(
+              children: [
+                _buildSwitchListTile(
+                    'Gluten Free',
+                    'Only include gluten-free meals.',
+                    _glutenFree!, (newValue) {
+                  setState(() {
+                    _glutenFree = newValue;
+                  });
+                }),
+                _buildSwitchListTile('Vegetarian',
+                    'Only include vegetarian meals.', _vegetarian!, (newValue) {
+                  setState(() {
+                    _vegetarian = newValue;
+                  });
+                }),
+                _buildSwitchListTile(
+                    'Vegan', 'Only include vegan meals.', _vegan!, (newValue) {
+                  setState(() {
+                    _vegan = newValue;
+                  });
+                }),
+                _buildSwitchListTile(
+                    'Lactose-free',
+                    'Only include lactose-free meals.',
+                    _lactoseFree!, (newValue) {
+                  setState(() {
+                    _lactoseFree = newValue;
+                  });
+                }),
+              ],
+            ),
+          )
         ],
       ),
     );
